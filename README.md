@@ -28,3 +28,13 @@ The network architecture used was a basic CNN model, with Max Pooling and ReLU A
 
 ## Future Work
 Good ideas or strategies that you were not able to implement which you think can help  improve performance.
+
+
+## Running The Application
+As of now we do not have an application but an example flask application 
+
+it is based on the modular structure to serve as an example of the same..
+
+It can be launched by first init the VirtualEnv and then running the run.py in the home folder
+
+The App folder contains all the information regarding the server
