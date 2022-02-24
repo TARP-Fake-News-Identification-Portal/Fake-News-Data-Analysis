@@ -60,4 +60,12 @@ it is based on the modular structure to serve as an example of the same..
 
 It can be launched by first init the VirtualEnv and then running the run.py in the home folder
 
+for linux/mac
+```
+source ./env/bin/activate
+```
+To run the server(as of yet its in debug mode)
+```
+python3 run.py
+```
 The App folder contains all the information regarding the server
