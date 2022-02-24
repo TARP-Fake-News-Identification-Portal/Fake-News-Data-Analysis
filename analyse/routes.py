@@ -20,6 +20,7 @@ def Home():
 def Dumb():
     return "<h1> Setting the Policy As DUMB </h1>"
 
+
 @app.route("/input")
 def inputFourm():
     return(render_template("predict.html"))
