@@ -1,0 +1,18 @@
+{% extends "baseHtml.html" %}
+{% block title %} 
+Predection of output
+{% endblock %} 
+
+
+{% block Body %}
+<h1>We are going to use ML to predict some stuff
+</h1>
+
+        <form method="post" action="/output">
+
+            <p>ENTER THE VALUES YOU WANT TO predict</p>
+            <input type="text" name="VALUE ENTERED">
+            <input type="submit">
+
+        </form>
+{% endblock %}

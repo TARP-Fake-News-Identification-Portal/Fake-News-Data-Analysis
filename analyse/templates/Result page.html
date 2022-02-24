@@ -1,0 +1,17 @@
+{% extends "baseHtml.html" %}
+{% block title %} 
+Result of the Prediction 
+{% endblock %} 
+
+
+{% block Body %}
+<div style="align-items: center; display:flex ; margin: 3vw;">
+
+    <h1>
+        The Value Predicted is <span id="pred"> {{ value["VALUE ENTERED"] }} </span>
+    </h1>
+    
+</div>
+<h2> Congratulations Its running Sucessfully </h2>
+<img src="{{ url_for('static',filename='img/0.gif') }}"> 
+{% endblock %}
