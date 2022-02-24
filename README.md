@@ -33,7 +33,7 @@ Files: `./data/sources/news_articles.csv`
 Files: `./data/sources/News Classification train.csv` and `./data/sources/News Classification test.csv`
 <br>
 
-The final dataset created for our prupose of News Classification is saved in `./data/TARP_Project_Final_Dataset.csv`. The dataset thus created was an approximately balanced one with very few null values.active
+The final dataset created for our prupose of News Classification is saved in `./data/TARP_Project_Final_Dataset.zip`. The dataset thus created was an approximately balanced one with very few null values.active
 
 
 

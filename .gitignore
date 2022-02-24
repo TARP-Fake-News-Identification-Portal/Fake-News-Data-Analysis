@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Dataset 
+TARP_Project_Final_Dataset.csv
+
 # Distribution / packaging
 .Python
 build/
