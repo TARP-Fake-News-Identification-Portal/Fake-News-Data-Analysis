@@ -5,13 +5,10 @@ its contents can then be retrived by doing its import 'packagename.filename' for
 """
 
 
-from flask import json,url_for
+from flask import json, url_for
+
 
 def JokesFunction():
-
-    data = json.load(open(url_for("static",filename="files/jokes.json")))
-
+    data = json.load(open(url_for("static", filename="files/jokes.json")))
     print(data)
-
-
     return data
