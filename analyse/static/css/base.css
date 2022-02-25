@@ -1,14 +1,27 @@
 html {
     color: #a47053;
     background-color: #909cac;
+    background-image: url("https://i.pinimg.com/originals/11/c0/0c/11c00c702d268a5a7789e801f995fbcc.gif");
+    background-size: cover;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: #cec3c8;
     margin: 2%;
     border: 5px black double;
     padding: 2%;
-    display: flex;
+    height: 50%;
+    border-radius: 35px;
 }
 
 #border {
@@ -18,10 +31,11 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    min-width: 60vw;
 }
 
 img {
-    height: 60vh;
+    height: 20vh;
 }
 
 a {

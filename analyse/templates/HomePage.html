@@ -1,15 +1,9 @@
-{% extends "baseHtml.html" %}
-{% block title %} 
-Welcome Home
-{% endblock %} 
-
-
-{% block Body %}
+{% extends "baseHtml.html" %} {% block title %} Welcome Home {% endblock %} {% block Body %}
 <div>
     <h1>
         Hello This is an example website and we are trying out new Things
     </h1>
-    <img src="{{ url_for('static', filename='img/phunny.gif')}}">
+    <!-- <img src="{{ url_for('static', filename='img/phunny.gif')}}"> -->
 
     <h2>
         <a href="/input">To start a prediction click here</a>
