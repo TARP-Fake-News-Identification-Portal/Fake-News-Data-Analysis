@@ -1,7 +1,7 @@
 html {
     color: #a47053;
     background-color: #909cac;
-    background-image: url("https://i.pinimg.com/originals/11/c0/0c/11c00c702d268a5a7789e801f995fbcc.gif");
+    background-image: url("https://imagesvc.meredithcorp.io/v3/mm/gif?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F12%2F2020%2F05%2F14%2Fpandemic-map-GettyImages-imsev200-049.gif");
     background-size: cover;
     height: 100vh;
     padding: 0;
@@ -16,21 +16,21 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: #cec3c8;
     margin: 2%;
     border: 5px black double;
     padding: 2%;
     height: 50%;
     border-radius: 35px;
-}
-
-#border {
-    display: flex;
     align-content: center;
-    justify-content: center;
-    flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
     min-width: 60vw;
 }
 
@@ -51,8 +51,22 @@ a {
     font: menu;
 }
 
+#in {
+    /* color: #909cac; */
+    color: #ff8286;
+    text-decoration-style: solid;
+}
+
 #pred {
     /* color: #ecdab9; */
     color: #909cac;
     text-decoration-style: solid;
+}
+
+#title {
+    -webkit-text-stroke-width: 0.025em;
+    -webkit-text-stroke-color: #321030;
+    mix-blend-mode: darken;
+    font-size: 5em;
+    color: #321030;
 }
