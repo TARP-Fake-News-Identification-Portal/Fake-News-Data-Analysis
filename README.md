@@ -64,8 +64,12 @@ for linux/mac
 ```
 source ./env/bin/activate
 ```
-To run the server(as of yet its in debug mode)
+For Windows with Python 3.7
 ```
-python3 run.py
+pip install -r requirements.txt
+set FLASK_APP=run.py
+set FLAKS_DEBUG=1
+flask run
 ```
+
 The App folder contains all the information regarding the server
