@@ -8,6 +8,7 @@ from flask import render_template, request
 from markupsafe import escape
 from analyse import app
 from analyse.externalFileExample import JokesFunction
+from analyse.prediction import predictor
 
 
 @app.route("/")
@@ -30,9 +31,9 @@ def inputFourm():
 def predictReq():
     if request.method == 'POST':
         lol = request.form
-
-        print(lol)
-        return render_template("Result page.html", value=lol)
+        answer = predictor(lol['VALUE ENTERED'])    
+        answer = f'The sentence shows {answer*100:.2f}% joy.'
+        return render_template("Result page.html", value=answer, input=lol['VALUE ENTERED'])
 
 
 @app.route("/<food>/<mood>")

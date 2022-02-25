@@ -1,10 +1,13 @@
 {% extends "baseHtml.html" %} {% block title %} Result of the Prediction {% endblock %} {% block Body %}
-<div style="align-items: center; display:flex ; margin: 3vw;">
-
+<div style="align-items: center; display:flex ; margin: 1vh;">
     <h1>
-        The Value Predicted is <span id="pred"> {{ value["VALUE ENTERED"] }} </span>
+        Given sentence:<br><span id="in"> {{ input }} </span>
     </h1>
-
+</div>
+<div style="align-items: center; display:flex ; margin: 1vh;">
+    <h1>
+        Prediction:<br><span id="pred"> {{ value }} </span>
+    </h1>
 </div>
 <h2> Congratulations!!!<br> Its running Successfully </h2>
 <!-- <img src="{{ url_for('static',filename='img/0.gif') }}">  -->
