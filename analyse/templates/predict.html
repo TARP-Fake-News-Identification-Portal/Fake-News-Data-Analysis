@@ -1,18 +1,15 @@
-{% extends "baseHtml.html" %}
-{% block title %} 
-Predection of output
-{% endblock %} 
-
-
-{% block Body %}
-<h1>We are going to use ML to predict some stuff
+{% extends "baseHtml.html" %} {% block title %} Predection of output {% endblock %} {% block Body %}
+<h1>Joy Predictor
 </h1>
+<p>
+    In this placeholder model we check the Joy percent of any given statemet.
+</p>
 
-        <form method="post" action="/output">
+<form method="post" action="/output">
 
-            <p>ENTER THE VALUES YOU WANT TO predict</p>
-            <input type="text" name="VALUE ENTERED">
-            <input type="submit">
+    <label>enter the statement you wish to predict</label>
+    <input type="text" name="VALUE ENTERED">
+    <input id="submit" type="submit">
 
-        </form>
+</form>
 {% endblock %}

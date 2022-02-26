@@ -9,12 +9,18 @@
     <title> {% block title %}{% endblock %}</title>
 </head>
 
-<body>
+
+<header>
     <h1 id="title">Fake News Checker</h1>
+</header>
+
+<body>
+
     <a style="align-self: flex-start; justify-self: flex-start; " href="/">Go To Home</a>
     <div id="border">
         {% block Body %}{% endblock %}
     </div>
 </body>
+
 
 </html>

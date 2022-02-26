@@ -9,17 +9,14 @@ from markupsafe import escape
 from analyse import app
 from analyse.externalFileExample import JokesFunction
 from analyse.prediction import predictor
+# from analyse.pdfGeneration import createPdf
 
 
 @app.route("/")
 def Home():
-    name = "lallan bhiya"
-    return render_template("HomePage.html")
+    
+    return render_template("HomePage.html",isHome=False)
 
-
-@app.route("/dumb")
-def Dumb():
-    return "<h1> Setting the Policy As DUMB </h1>"
 
 
 @app.route("/input")
@@ -33,16 +30,17 @@ def predictReq():
         lol = request.form
         answer = predictor(lol['VALUE ENTERED'])    
         answer = f'The sentence shows {answer*100:.2f}% joy.'
+        webPage = render_template("Result page.html", value=answer, input=lol['VALUE ENTERED'])
+        
         return render_template("Result page.html", value=answer, input=lol['VALUE ENTERED'])
 
+@app.route("/DownloadReport", methods=["POST"])
+def DownloadReport():
+    lol = request.form
+    webPage = render_template("Result page.html", value=lol["1"], input=lol['2'])
+    response = createPdf(webPage)
+    return response
 
-@app.route("/<food>/<mood>")
-def lol(food, mood):
-
-    string = "When my mood is " + \
-        escape(mood) + " I eat that Tasty " + escape(food)
-
-    return "<h1>"+string+"</h1>"
 
 
 @app.route("/funny")

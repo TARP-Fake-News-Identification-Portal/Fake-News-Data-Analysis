@@ -9,9 +9,12 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-stretch: expanded;
 }
 
 body {
+    transition: width 2s, height 4s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,11 +22,12 @@ body {
 }
 
 #border {
+    transition: width 10s, height 15s;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #cec3c8;
+    background-color: #c7cec3a8;
     margin: 2%;
     border: 5px black double;
     padding: 2%;
@@ -32,10 +36,43 @@ body {
     align-content: center;
     flex-wrap: wrap;
     min-width: 60vw;
+    -webkit-backdrop-filter: blur(20px);
 }
 
 img {
     height: 20vh;
+}
+
+form {
+    color: #909cac;
+    font-size: large;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(127, 176, 255, 0.294);
+    backdrop-filter: blur(20px);
+    border: 5px #909cac solid;
+    border-radius: 10px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    padding: 1vh;
+}
+
+input {
+    text-align: center;
+    width: 25vw;
+    height: 2vh;
+    padding: 5%;
+    margin: .5vw;
+    font-family: monospace;
+    background-color: #9e4fc25b;
+    border: 3px #909cac dotted;
+    font-size: 1em;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(48, 107, 80, 0.678);
+    color: rgb(156, 167, 185);
 }
 
 a {
