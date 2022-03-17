@@ -8,6 +8,7 @@ __pycache__/
 
 # Dataset 
 TARP_Project_Final_Dataset.csv
+embedings/
 
 # Distribution / packaging
 .Python
