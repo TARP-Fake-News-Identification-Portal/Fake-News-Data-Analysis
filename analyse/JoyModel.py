@@ -29,7 +29,7 @@ class JoyModel(NLPModel):
             prediction: The value the given Machine Learning model predicted
         """
         prediction = super().predict(text)
-        return prediction[0]
+        return round(prediction[0] * 100, 2)
 
     def load_model(self, model_weights):
         """
