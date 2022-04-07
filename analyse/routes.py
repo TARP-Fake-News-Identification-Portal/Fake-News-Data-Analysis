@@ -37,7 +37,13 @@ def getTweets():
         bot = TwitterBot()
         bot.authenticate()
         tweets = bot.getTweetsByUser(twitterID)
-        return render_template("tweets.html", tweet=tweets[0].full_text)
+        if tweets is not None:
+            model = JoyModel("./models/Best_Joy.sav")
+            prediction = model.predict(tweets[0].full_text)
+            prediction = str(prediction) + "% Joy"
+            return render_template("tweets.html", message=prediction)
+        else:
+            return render_template("tweets.html", message="Invalid User ID")
     # Returns a form to get the user ID
     else:
         return render_template("tweets.html")

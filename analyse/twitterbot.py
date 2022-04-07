@@ -21,10 +21,11 @@ class TwitterBot:
         """
         Authenticates the instance
         """
-        auth = tweepy.OAuthHandler(self.consumerKey, self.consumerSecret)
+        auth = tweepy.OAuth1UserHandler(self.consumerKey, self.consumerSecret)
         auth.set_access_token(self.accessToken, self.accessTokenSecret)
-        self.api = tweepy.API(auth)
+        api = tweepy.API(auth)
         self.__authenticated = True
+        return api
 
     def isAuthenticated(self):
         """
@@ -34,6 +35,25 @@ class TwitterBot:
             A boolean value that signifies the authentication status
         """
         return self.__authenticated
+
+    def isUserIDValid(self, userID):
+        """
+        Checks whether a user of given userID exists
+
+        Args:
+            userID (string): Twitter user ID
+
+        Returns:
+            status(boolean): Validity status of the user
+        """
+        api = self.authenticate()
+        try:
+            user = api.get_user(screen_name=userID)
+            print("Found user")
+            return True
+        except tweepy.NotFound as e:
+            print("User ID invalid, user does not exist")
+            return False
 
     def getTweetsByUser(self, userID):
         """
@@ -45,7 +65,11 @@ class TwitterBot:
         Returns:
             tweets (list): A list of strings containing the tweets of the given user
         """
-        tweets = self.api.user_timeline(
-            screen_name=userID, count=10, include_rts=False, tweet_mode="extended"
-        )
-        return tweets
+        api = self.authenticate()
+        if self.isUserIDValid(userID):
+            tweets = api.user_timeline(
+                screen_name=userID, count=10, include_rts=False, tweet_mode="extended"
+            )
+            return tweets
+        else:
+            return None
