@@ -103,6 +103,3 @@ class FakeModel(models.NLPModel):
     def predict(self, tweets):
         print(tweets)
         return super().predict([tweets])
-
-
-model = FakeModel("./models/FakeNewsANN.h5")
