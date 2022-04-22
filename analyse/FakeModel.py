@@ -95,9 +95,7 @@ class FakeModel(models.NLPModel):
             # remove punctuation
             operator = str.maketrans("", "", string.punctuation)
             new = new.translate(operator)
-
             cleanText.append(new)
-
         return cleanText
 
     def predict(self, tweets):
