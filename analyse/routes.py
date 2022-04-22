@@ -71,7 +71,11 @@ def predictSentiment():
     # API Endpoint for the Chrome Extension
     model = FakeModel("./models/FakeNewsANN.h5")
     data = request.get_json()
-    prediction = model.predict(text=data["data"])
+    bot = TwitterBot()
+    bot.authenticate()
+    tweets = bot.getTweetsByUser(data["data"])
+    output = model.predict(tweets)
+    prediction = zip_lists(tweets, output)
     response = {"prediction": prediction}
     return response
 
@@ -79,7 +83,8 @@ def predictSentiment():
 @app.route("/DownloadReport", methods=["POST"])
 def DownloadReport():
     lol = request.form
-    webPage = render_template("Result page.html", value=lol["1"], input=lol["2"])
+    webPage = render_template(
+        "Result page.html", value=lol["1"], input=lol["2"])
     response = createPdf(webPage)
     return response
 
