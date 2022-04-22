@@ -12,6 +12,7 @@ from analyse.prediction import predictor
 from .twitterbot import TwitterBot
 import json
 from .JoyModel import JoyModel
+from .FakeModel import FakeModel
 
 # from analyse.pdfGeneration import createPdf
 
@@ -69,7 +70,8 @@ def predictReq():
 
 @app.route("/predict", methods=["POST"])
 def predictSentiment():
-    model = JoyModel("./models/Best_Joy.sav")
+    # API Endpoint for the Chrome Extension
+    model = FakeModel("./models/FakeNewsANN.h5")
     data = request.get_json()
     prediction = model.predict(text=data["data"])
     response = {"prediction": prediction}
