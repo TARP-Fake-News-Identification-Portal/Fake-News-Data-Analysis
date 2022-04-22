@@ -1,12 +1,10 @@
 import tensorflow as tf
-
 import pandas as pd
 import numpy as np
-
 from nltk.tokenize import word_tokenize
-
 import regex as re
 import string
+
 from . import models
 
 

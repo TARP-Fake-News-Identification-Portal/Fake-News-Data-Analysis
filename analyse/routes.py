@@ -5,12 +5,10 @@ Keep in mind that imports specfic to a seprate function is to be done in its own
 
 
 from flask import render_template, request
-from markupsafe import escape
 from analyse import app
 from analyse.externalFileExample import JokesFunction
 from analyse.prediction import predictor
 from .twitterbot import TwitterBot
-import json
 from .JoyModel import JoyModel
 from .FakeModel import FakeModel
 
