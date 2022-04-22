@@ -9,7 +9,7 @@
         <table>
             <tr>
                 <th>Tweet</th>
-                <th>Reality Score</th>
+                <th>Authenticity</th>
             </tr>
 
             {% for p in prediction %}
@@ -22,6 +22,7 @@
         </table>
     {% endif %}
 </div>
+<footer><span style="color: #ff4b51;">Note: Higher the reality score, higher the authenticity of the news</span></footer>
 <!-- 
 <form method="post" action="/DownloadReport">
 
