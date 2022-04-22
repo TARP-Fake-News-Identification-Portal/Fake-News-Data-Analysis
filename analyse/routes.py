@@ -16,6 +16,10 @@ from .JoyModel import JoyModel
 # from analyse.pdfGeneration import createPdf
 
 
+def zip_lists(list1, list2):
+    return list(zip(list1, list2))
+
+
 @app.route("/")
 def Home():
 
@@ -39,9 +43,12 @@ def getTweets():
         tweets = bot.getTweetsByUser(twitterID)
         if tweets is not None:
             model = JoyModel("./models/Best_Joy.sav")
-            prediction = model.predict(tweets[0].full_text)
-            prediction = str(prediction) + "% Joy"
-            return render_template("tweets.html", message=prediction)
+            output = model.predict(tweets)
+            prediction = zip_lists(tweets, output)
+            print(prediction[0])
+            return render_template(
+                "results.html", user=twitterID, prediction=prediction
+            )
         else:
             return render_template("tweets.html", message="Invalid User ID")
     # Returns a form to get the user ID

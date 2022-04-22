@@ -18,18 +18,18 @@ class JoyModel(NLPModel):
         processed_text = [text]
         return processed_text
 
-    def predict(self, text):
+    def predict(self, tweets):
         """
-        Prediction function that predicts the target given a line of text
+        Prediction function that predicts the target given a list of tweets
 
         Args:
-            text (string): Input text for prediction
+            tweets (list): Input tweets for prediction
 
         Returns:
-            prediction: The value the given Machine Learning model predicted
+            predictions: The values the given Machine Learning model predicted
         """
-        prediction = super().predict(text)
-        return round(prediction[0] * 100, 2)
+        predictions = super().predict(tweets)
+        return predictions
 
     def load_model(self, model_weights):
         """

@@ -1,5 +1,5 @@
 html {
-    color: #a47053;
+    color: rgb(113, 0, 0);
     background-color: #909cac;
     background-image: url("https://imagesvc.meredithcorp.io/v3/mm/gif?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F12%2F2020%2F05%2F14%2Fpandemic-map-GettyImages-imsev200-049.gif");
     background-size: cover;
@@ -90,7 +90,7 @@ a {
 
 #in {
     /* color: #909cac; */
-    color: #ff8286;
+    color: #ff494f;
     text-decoration-style: solid;
 }
 

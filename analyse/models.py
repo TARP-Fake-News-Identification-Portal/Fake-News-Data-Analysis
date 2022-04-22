@@ -38,16 +38,18 @@ class NLPModel:
         else:
             return processed_text
 
-    def predict(self, text):
+    def predict(self, tweets):
         """
-        Prediction function that predicts the target given a line of text
+        Prediction function that predicts the target given a list of tweets
 
         Args:
-            text (string): Input text for prediction
+            tweets (list): Input tweets for prediction
 
         Returns:
             prediction: The value the given Machine Learning model predicted
         """
-        processed_text = self.preprocess(text)
-        prediction = self.model.predict(processed_text)
-        return prediction
+        predictions = []
+        for tweet in tweets:
+            processed_text = self.preprocess(tweet)
+            predictions.append(round(self.model.predict(processed_text)[0] * 100, 3))
+        return predictions
