@@ -4,7 +4,7 @@ Keep in mind that imports specfic to a seprate function is to be done in its own
 """
 
 
-from flask import render_template, request
+from flask import render_template, request, Flask
 from analyse import app
 from analyse.externalFileExample import JokesFunction
 from analyse.prediction import predictor
@@ -12,6 +12,10 @@ from .twitterbot import TwitterBot
 from .JoyModel import JoyModel
 from .FakeModel import FakeModel
 
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
 # from analyse.pdfGeneration import createPdf
 
 
@@ -81,7 +85,8 @@ def predictSentiment():
 @app.route("/DownloadReport", methods=["POST"])
 def DownloadReport():
     lol = request.form
-    webPage = render_template("Result page.html", value=lol["1"], input=lol["2"])
+    webPage = render_template(
+        "Result page.html", value=lol["1"], input=lol["2"])
     response = createPdf(webPage)
     return response
 
