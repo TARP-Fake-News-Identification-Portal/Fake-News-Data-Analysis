@@ -51,5 +51,6 @@ class NLPModel:
         predictions = []
         for tweet in tweets:
             processed_text = self.preprocess(tweet)
-            predictions.append(round(self.model.predict(processed_text)[0] * 100, 3))
+            predictions.append(self.model.predict(processed_text)[0][0])
+        print("Predictions: ", predictions)
         return predictions

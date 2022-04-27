@@ -36,16 +36,13 @@ def getTweets():
     if request.method == "POST":
         form = request.form
         twitterID = form["twitterID"]
-        print(twitterID)
         bot = TwitterBot()
         bot.authenticate()
         tweets = bot.getTweetsByUser(twitterID)
-        print(tweets)
         if tweets is not None:
-            model = JoyModel("./models/Best_Joy.sav")
+            model = FakeModel("./models/FakeNewsANN.h5")
             output = model.predict(tweets)
             prediction = zip_lists(tweets, output)
-            print(prediction[0])
             return render_template(
                 "results.html", user=twitterID, prediction=prediction
             )
@@ -77,7 +74,7 @@ def predictSentiment():
     tweets = bot.getTweetsByUser(data["data"])
     output = model.predict(tweets)
     prediction = zip_lists(tweets, output)
-    response = {"prediction": prediction}
+    response = {"prediction": prediction[1]}
     return response
 
 

@@ -2,6 +2,17 @@ import tweepy
 from . import settings
 
 
+"""
+TODO: THings to change, test and debug in TwitterBot
+
+1. Null tweet
+2. User exists but has no tweet
+3. User suspended
+4. User not authorized
+5. Index out of range error
+"""
+
+
 class TwitterBot:
     """
     A simple class that abstracts away boilerplate code for accessing twitter API and makes life easier
@@ -27,15 +38,6 @@ class TwitterBot:
         self.__authenticated = True
         return api
 
-    def isAuthenticated(self):
-        """
-        Checks whether the bot is authenticated.
-
-        Returns:
-            A boolean value that signifies the authentication status
-        """
-        return self.__authenticated
-
     def isUserIDValid(self, userID):
         """
         Checks whether a user of given userID exists
@@ -51,8 +53,8 @@ class TwitterBot:
             user = api.get_user(screen_name=userID)
             print("Found user")
             return True
-        except tweepy.NotFound as e:
-            print("User ID invalid, user does not exist")
+        except tweepy.TweepyException as e:
+            print(e.with_traceback())
             return False
 
     def getTweetsByUser(self, userID):

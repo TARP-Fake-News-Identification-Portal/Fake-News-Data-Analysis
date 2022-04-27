@@ -9,6 +9,7 @@ __pycache__/
 # Dataset 
 TARP_Project_Final_Dataset.csv
 embedings/
+Glove.csv
 
 # Distribution / packaging
 .Python

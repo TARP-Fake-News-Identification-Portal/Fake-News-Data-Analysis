@@ -99,5 +99,10 @@ class FakeModel(models.NLPModel):
         return cleanText
 
     def predict(self, tweets):
-        print(tweets)
-        return super().predict([tweets])
+        predictions = []
+        for tweet in tweets:
+            processed_text = self.preprocess(tweet)
+            predictions.append(
+                round(float(self.model.predict(processed_text)[0][0]) * 100, 3)
+            )
+        return predictions
