@@ -40,6 +40,7 @@ def getTweets():
         bot = TwitterBot()
         bot.authenticate()
         tweets = bot.getTweetsByUser(twitterID)
+        print(tweets)
         if tweets is not None:
             model = JoyModel("./models/Best_Joy.sav")
             output = model.predict(tweets)
@@ -83,8 +84,7 @@ def predictSentiment():
 @app.route("/DownloadReport", methods=["POST"])
 def DownloadReport():
     lol = request.form
-    webPage = render_template(
-        "Result page.html", value=lol["1"], input=lol["2"])
+    webPage = render_template("Result page.html", value=lol["1"], input=lol["2"])
     response = createPdf(webPage)
     return response
 
