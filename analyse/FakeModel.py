@@ -102,7 +102,5 @@ class FakeModel(models.NLPModel):
         predictions = []
         for tweet in tweets:
             processed_text = self.preprocess(tweet)
-            predictions.append(
-                round(float(self.model.predict(processed_text)[0][0]) * 100, 3)
-            )
+            predictions.append(self.model.predict(processed_text)[0][0] * 100)
         return predictions

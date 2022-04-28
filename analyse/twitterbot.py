@@ -70,7 +70,7 @@ class TwitterBot:
         api = self.authenticate()
         if self.isUserIDValid(userID):
             tweets = api.user_timeline(
-                screen_name=userID, count=20, include_rts=False, tweet_mode="extended"
+                screen_name=userID, count=10, include_rts=False, tweet_mode="extended"
             )
             tweet_text = [tweets[i].full_text for i in range(len(tweets))]
             return tweet_text

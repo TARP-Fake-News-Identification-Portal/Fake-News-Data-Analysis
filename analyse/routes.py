@@ -72,20 +72,22 @@ def predictSentiment():
     # API Endpoint for the Chrome Extension
 
     data = request.get_json()
+    print(data["data"])
     bot = TwitterBot()
     bot.authenticate()
     tweets = bot.getTweetsByUser(data["data"])
     output = model.predict(tweets)
+    print("Output: ", output)
     prediction = zip_lists(tweets, output)
-    response = {"prediction": prediction[1]}
+    print(prediction)
+    response = {"prediction": prediction}
     return response
 
 
 @app.route("/DownloadReport", methods=["POST"])
 def DownloadReport():
     lol = request.form
-    webPage = render_template(
-        "Result page.html", value=lol["1"], input=lol["2"])
+    webPage = render_template("Result page.html", value=lol["1"], input=lol["2"])
     response = createPdf(webPage)
     return response
 
