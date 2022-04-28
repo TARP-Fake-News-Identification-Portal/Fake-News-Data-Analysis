@@ -19,6 +19,9 @@ def zip_lists(list1, list2):
     return list(zip(list1, list2))
 
 
+model = FakeModel("./models/FakeNewsANN.h5")
+
+
 @app.route("/")
 def Home():
 
@@ -40,7 +43,6 @@ def getTweets():
         bot.authenticate()
         tweets = bot.getTweetsByUser(twitterID)
         if tweets is not None:
-            model = FakeModel("./models/FakeNewsANN.h5")
             output = model.predict(tweets)
             prediction = zip_lists(tweets, output)
             return render_template(
@@ -67,7 +69,7 @@ def predictReq():
 @app.route("/predict", methods=["POST"])
 def predictSentiment():
     # API Endpoint for the Chrome Extension
-    model = FakeModel("./models/FakeNewsANN.h5")
+
     data = request.get_json()
     bot = TwitterBot()
     bot.authenticate()
