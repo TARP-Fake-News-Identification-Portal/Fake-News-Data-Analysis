@@ -12,10 +12,7 @@ from .twitterbot import TwitterBot
 from .JoyModel import JoyModel
 from .FakeModel import FakeModel
 
-from flask_cors import CORS
 
-app = Flask(__name__)
-CORS(app)
 # from analyse.pdfGeneration import createPdf
 
 
