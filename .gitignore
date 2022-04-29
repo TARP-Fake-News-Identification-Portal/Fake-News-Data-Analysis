@@ -9,6 +9,7 @@ __pycache__/
 # Dataset 
 TARP_Project_Final_Dataset.csv
 embedings/
+Glove.csv
 
 # Distribution / packaging
 .Python
@@ -134,3 +135,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+#Yash Model
+./models/yash/lstm64_half.h5
+
+.logs/
+.DS_Store 
