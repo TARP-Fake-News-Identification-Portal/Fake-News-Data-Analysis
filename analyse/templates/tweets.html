@@ -3,8 +3,8 @@
 {% block title %} Tweets {% endblock %} 
 {% block Body %}
 <div style="align-items: center; display: flex; margin: 1vh">
-  {% if tweet %}
-  <h1>Tweet:<br /><span id="in">{{tweet}} </span></h1>
+  {% if message %}
+  <h1>Tweet:<br /><span id="in">{{message}} </span></h1>
     
   {% else %}
     <form action="/tweets" method="post">

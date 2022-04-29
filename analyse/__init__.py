@@ -6,7 +6,7 @@ it is the controller of the package which in this case is analyse
 """
 
 from flask import Flask
-
+from flask_cors import CORS
 
 app = Flask(__name__)
 
