@@ -1,5 +1,7 @@
-"""# Run a test server.
-#Its only job is to start the module nothing else"""
+"""
+Run a test server.
+Its only job is to start the module nothing else
+"""
 
 from analyse import app
 
